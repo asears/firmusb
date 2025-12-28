@@ -38,6 +38,8 @@ DNS monitor (requires Npcap/WinPcap)
   3) Capture queries on adapter 0: `.\\monitor_dns.exe --iface=0`
   4) Capture and log: `.\\monitor_dns.exe --iface=0 --output=dns.log`
 
+Note: The repository includes a vendored copy of the minimal libpcap headers and the libpcap BSD license under `third_party/libpcap/` to make building the DNS monitor possible even when developer headers are not installed system-wide. If you prefer to use your system's libpcap/Npcap installation, ensure the headers and libraries are available and the build will prefer those where appropriate.
+
 Notes: The DNS monitor uses libpcap to capture UDP/TCP port 53 and prints query names. Run with sufficient privileges.
 
 Build

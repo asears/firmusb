@@ -15,6 +15,8 @@ add_executable(monitor_keyboard src/monitor_keyboard.cpp)
 target_link_libraries(monitor_keyboard PRIVATE setupapi user32)
 
 add_executable(monitor_dns src/monitor_dns.cpp)
+# Use vendored headers if available (repo root `include`)
+target_include_directories(monitor_dns PRIVATE ${CMAKE_SOURCE_DIR}/include)
 if (MSVC)
     # Npcap/WinPcap: link wpcap, Packet, iphlpapi and ws2_32
     target_link_libraries(monitor_dns PRIVATE wpcap Packet iphlpapi ws2_32)
