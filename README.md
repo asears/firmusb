@@ -31,6 +31,15 @@ Keyboard monitor
   .\monitor_keyboard.exe --capture
   .\monitor_keyboard.exe --capture --output=keyboard.log
 
+DNS monitor (requires Npcap/WinPcap)
+
+  1) Install Npcap (https://nmap.org/npcap/) and select "WinPcap API-compatible mode" if asked.
+  2) List adapters: `.\\monitor_dns.exe`
+  3) Capture queries on adapter 0: `.\\monitor_dns.exe --iface=0`
+  4) Capture and log: `.\\monitor_dns.exe --iface=0 --output=dns.log`
+
+Notes: The DNS monitor uses libpcap to capture UDP/TCP port 53 and prints query names. Run with sufficient privileges.
+
 Build
 
 Option A — Visual Studio (recommended)

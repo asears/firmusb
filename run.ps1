@@ -11,4 +11,12 @@ Write-Host "  .\monitor_keyboard.exe"
 Write-Host "  .\monitor_keyboard.exe --capture"
 Write-Host "  .\monitor_keyboard.exe --capture --output=keyboard.log"
 
+Write-Host "DNS monitor (requires Npcap/WinPcap):"
+Write-Host "  # list adapters"
+Write-Host "  .\monitor_dns.exe"
+Write-Host "  # capture on adapter 0 and show queries"
+Write-Host "  .\monitor_dns.exe --iface=0"
+Write-Host "  # capture and write logs"
+Write-Host "  .\monitor_dns.exe --iface=0 --output=dns.log"
+
 Write-Host "Run the second or third command in an elevated console if you do not see capture output."

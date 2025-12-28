@@ -13,6 +13,12 @@ if (Get-Command cl -ErrorAction SilentlyContinue) {
     Write-Host "Using g++"
     g++ -std=c++17 -O2 src\monitor_mouse.cpp -lsetupapi -o monitor_mouse.exe
     if ($LASTEXITCODE -ne 0) { throw "Build failed" }
+    # Try building DNS monitor with libpcap
+    if (Get-Command g++ -ErrorAction SilentlyContinue) {
+        Write-Host "Building monitor_dns (needs libpcap/Npcap)"
+        g++ -std=c++17 -O2 src\monitor_dns.cpp -lpcap -liphlpapi -lws2_32 -o monitor_dns.exe
+        if ($LASTEXITCODE -ne 0) { Write-Host "monitor_dns build failed - ensure Npcap/libpcap is installed" }
+    }
 } else {
     Write-Host "No supported compiler found. Install Visual Studio or MinGW-w64."
 }
