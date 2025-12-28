@@ -10,3 +10,6 @@ if (MSVC)
 else()
     target_link_libraries(monitor_mouse PRIVATE setupapi user32)
 endif()
+
+add_executable(monitor_keyboard src/monitor_keyboard.cpp)
+target_link_libraries(monitor_keyboard PRIVATE setupapi user32)

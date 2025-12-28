@@ -25,6 +25,12 @@ Examples (PowerShell)
   # Use built-in output file (also prints to console)
   .\monitor_mouse.exe --capture --output=monitor.log
 
+Keyboard monitor
+
+  .\monitor_keyboard.exe
+  .\monitor_keyboard.exe --capture
+  .\monitor_keyboard.exe --capture --output=keyboard.log
+
 Build
 
 Option A — Visual Studio (recommended)
