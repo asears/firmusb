@@ -1,3 +1,15 @@
+Ace of Base demo scene synth
+
+  .\soundtracker_aceofbase.exe
+
+  - Auto-plays a smoothed, tracker-style version of "All That She Wants" (melody only)
+  - Real-time audio output using Windows waveOut
+  - Synthesizes with mixed sine, saw, cos, tan waveforms and envelope smoothing
+  - Demo scene style, no keyboard input needed
+
+Example:
+  .\soundtracker_aceofbase.exe
+
 # monitor_mouse — USB mouse monitor (Windows)
 
 Small Windows CLI tool to monitor USB mice (attach/detach) and optionally capture live mouse events via Raw Input.
@@ -32,6 +44,24 @@ Keyboard monitor
   .\monitor_keyboard.exe --capture --output=keyboard.log
 
 DNS monitor (requires Npcap/WinPcap)
+
+Soundtracker (ScreamTracker-style demo scene synth)
+
+  .\soundtracker.exe --waveform mix
+  .\soundtracker.exe --waveform sine
+  .\soundtracker.exe --waveform saw
+  .\soundtracker.exe --waveform cos
+  .\soundtracker.exe --waveform tan
+
+  - Keyboard input: A S D F G H J K (C major scale)
+  - Real-time audio output using Windows waveOut
+  - ESC to quit
+  - Mixes sine, saw, cos, tan for 90s dance demo scene sound
+
+Example:
+  .\soundtracker.exe --waveform mix
+
+Enjoy Future Crew style!
 
   1) Install Npcap (https://nmap.org/npcap/) and select "WinPcap API-compatible mode" if asked.
   2) List adapters: `.\\monitor_dns.exe`
